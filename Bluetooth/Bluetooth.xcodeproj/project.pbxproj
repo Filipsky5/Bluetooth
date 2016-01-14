@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F123BE91BC19B1D00251431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F123BE81BC19B1D00251431 /* CoreGraphics.framework */; };
+		5F123BEB1BC19B2500251431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F123BEA1BC19B2500251431 /* Foundation.framework */; };
+		5F123BED1BC19B3000251431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F123BEC1BC19B3000251431 /* UIKit.framework */; };
+		5F123BF01BC19C7100251431 /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F123BEF1BC19C7100251431 /* Defines.swift */; };
+		5F123BF41BC1A1C500251431 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F123BF31BC1A1C500251431 /* MasterViewController.swift */; };
+		5F278FDA1C482DC900646BC4 /* ChooseImplementationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F278FD91C482DC900646BC4 /* ChooseImplementationTableViewController.swift */; };
+		5F278FE01C482F9200646BC4 /* ObjCBeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F278FDF1C482F9200646BC4 /* ObjCBeaconViewController.m */; };
+		5F278FE31C48406000646BC4 /* BLERetriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F278FE21C48406000646BC4 /* BLERetriver.m */; };
 		5F296DA51BBAABE80084242D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F296DA41BBAABE80084242D /* AppDelegate.swift */; };
 		5F296DA81BBAABE80084242D /* Bluetooth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F296DA61BBAABE80084242D /* Bluetooth.xcdatamodeld */; };
-		5F296DAA1BBAABE80084242D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F296DA91BBAABE80084242D /* MasterViewController.swift */; };
-		5F296DAC1BBAABE80084242D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F296DAB1BBAABE80084242D /* DetailViewController.swift */; };
 		5F296DAF1BBAABE80084242D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F296DAD1BBAABE80084242D /* Main.storyboard */; };
 		5F296DB11BBAABE80084242D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F296DB01BBAABE80084242D /* Assets.xcassets */; };
 		5F296DB41BBAABE80084242D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F296DB21BBAABE80084242D /* LaunchScreen.storyboard */; };
@@ -37,11 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F123BE81BC19B1D00251431 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5F123BEA1BC19B2500251431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5F123BEC1BC19B3000251431 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5F123BEF1BC19C7100251431 /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		5F123BF31BC1A1C500251431 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		5F278FD91C482DC900646BC4 /* ChooseImplementationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseImplementationTableViewController.swift; sourceTree = "<group>"; };
+		5F278FDD1C482F9100646BC4 /* Bluetooth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bluetooth-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F278FDE1C482F9200646BC4 /* ObjCBeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCBeaconViewController.h; path = "OBJ C/ObjCBeaconViewController.h"; sourceTree = "<group>"; };
+		5F278FDF1C482F9200646BC4 /* ObjCBeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCBeaconViewController.m; path = "OBJ C/ObjCBeaconViewController.m"; sourceTree = "<group>"; };
+		5F278FE11C48406000646BC4 /* BLERetriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLERetriver.h; path = "OBJ C/BLERetriver.h"; sourceTree = "<group>"; };
+		5F278FE21C48406000646BC4 /* BLERetriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLERetriver.m; path = "OBJ C/BLERetriver.m"; sourceTree = "<group>"; };
 		5F296DA11BBAABE80084242D /* Bluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F296DA41BBAABE80084242D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F296DA71BBAABE80084242D /* Bluetooth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bluetooth.xcdatamodel; sourceTree = "<group>"; };
-		5F296DA91BBAABE80084242D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		5F296DAB1BBAABE80084242D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5F296DAE1BBAABE80084242D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F296DB01BBAABE80084242D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F296DB31BBAABE80084242D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F123BED1BC19B3000251431 /* UIKit.framework in Frameworks */,
+				5F123BEB1BC19B2500251431 /* Foundation.framework in Frameworks */,
+				5F123BE91BC19B1D00251431 /* CoreGraphics.framework in Frameworks */,
 				5F296DD81BBAABF90084242D /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,14 +99,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F123BEE1BC19B6800251431 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F123BEC1BC19B3000251431 /* UIKit.framework */,
+				5F123BEA1BC19B2500251431 /* Foundation.framework */,
+				5F123BE81BC19B1D00251431 /* CoreGraphics.framework */,
+				5F296DD71BBAABF90084242D /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F278FDB1C482F3C00646BC4 /* SWIFT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SWIFT;
+			sourceTree = "<group>";
+		};
+		5F278FDC1C482F4300646BC4 /* OBJ C */ = {
+			isa = PBXGroup;
+			children = (
+				5F278FDE1C482F9200646BC4 /* ObjCBeaconViewController.h */,
+				5F278FDF1C482F9200646BC4 /* ObjCBeaconViewController.m */,
+				5F278FDD1C482F9100646BC4 /* Bluetooth-Bridging-Header.h */,
+				5F278FE11C48406000646BC4 /* BLERetriver.h */,
+				5F278FE21C48406000646BC4 /* BLERetriver.m */,
+			);
+			name = "OBJ C";
+			sourceTree = "<group>";
+		};
 		5F296D981BBAABE70084242D = {
 			isa = PBXGroup;
 			children = (
-				5F296DD71BBAABF90084242D /* CoreBluetooth.framework */,
 				5F296DA31BBAABE80084242D /* Bluetooth */,
 				5F296DBD1BBAABE80084242D /* BluetoothTests */,
 				5F296DC81BBAABE80084242D /* BluetoothUITests */,
 				5F296DA21BBAABE80084242D /* Products */,
+				5F123BEE1BC19B6800251431 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,14 +153,17 @@
 		5F296DA31BBAABE80084242D /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				5F278FDC1C482F4300646BC4 /* OBJ C */,
+				5F278FDB1C482F3C00646BC4 /* SWIFT */,
 				5F296DA41BBAABE80084242D /* AppDelegate.swift */,
-				5F296DA91BBAABE80084242D /* MasterViewController.swift */,
-				5F296DAB1BBAABE80084242D /* DetailViewController.swift */,
 				5F296DAD1BBAABE80084242D /* Main.storyboard */,
 				5F296DB01BBAABE80084242D /* Assets.xcassets */,
 				5F296DB21BBAABE80084242D /* LaunchScreen.storyboard */,
 				5F296DB51BBAABE80084242D /* Info.plist */,
 				5F296DA61BBAABE80084242D /* Bluetooth.xcdatamodeld */,
+				5F123BEF1BC19C7100251431 /* Defines.swift */,
+				5F123BF31BC1A1C500251431 /* MasterViewController.swift */,
+				5F278FD91C482DC900646BC4 /* ChooseImplementationTableViewController.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -197,6 +248,7 @@
 		5F296D991BBAABE70084242D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = filip.jablonski;
 				TargetAttributes = {
@@ -265,10 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F123BF41BC1A1C500251431 /* MasterViewController.swift in Sources */,
 				5F296DA81BBAABE80084242D /* Bluetooth.xcdatamodeld in Sources */,
+				5F278FE01C482F9200646BC4 /* ObjCBeaconViewController.m in Sources */,
+				5F278FE31C48406000646BC4 /* BLERetriver.m in Sources */,
+				5F278FDA1C482DC900646BC4 /* ChooseImplementationTableViewController.swift in Sources */,
 				5F296DA51BBAABE80084242D /* AppDelegate.swift in Sources */,
-				5F296DAA1BBAABE80084242D /* MasterViewController.swift in Sources */,
-				5F296DAC1BBAABE80084242D /* DetailViewController.swift in Sources */,
+				5F123BF01BC19C7100251431 /* Defines.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,10 +465,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Bluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filip.jablonski.Bluetooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bluetooth/Bluetooth-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -421,10 +479,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Bluetooth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.filip.jablonski.Bluetooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bluetooth/Bluetooth-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -495,6 +555,7 @@
 				5F296DD01BBAABE80084242D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F296DD11BBAABE80084242D /* Build configuration list for PBXNativeTarget "BluetoothTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +564,7 @@
 				5F296DD31BBAABE80084242D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F296DD41BBAABE80084242D /* Build configuration list for PBXNativeTarget "BluetoothUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +573,7 @@
 				5F296DD61BBAABE80084242D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
