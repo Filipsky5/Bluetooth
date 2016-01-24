@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "ConstansObjC.h"
 @protocol BLERetriverDelegate
 @required
 -(void)retriveDeviceWithUIID:(NSString*)UIID;

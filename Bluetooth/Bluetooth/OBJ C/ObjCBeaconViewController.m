@@ -7,6 +7,7 @@
 //
 
 #import "ObjCBeaconViewController.h"
+#import "ProximityObjCViewController.h"
 
 @interface ObjCBeaconViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *UIIDTextField;
@@ -22,11 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.devices = [[NSMutableArray alloc]init];
     [self.ScanConnectBtn setTitle:@"Scan" forState:UIControlStateNormal];
     [self.DevicesTableView reloadData];
     self.bleRetriver = [[BLERetriver alloc]init];
     [self.bleRetriver setDelegate:self];
-    self.devices = [[NSMutableArray alloc]init];
     // Do any additional setup after loading the view.
 }
 
@@ -49,14 +50,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.UIIDTextField setText:self.devices[indexPath.row]];
-    [self.ScanConnectBtn setTitle:@"Connect" forState:UIControlStateNormal];
+//    [self.ScanConnectBtn setTitle:@"Connect" forState:UIControlStateNormal];
 }
 - (IBAction)ScanConnectPressed:(id)sender {
     if([[self.ScanConnectBtn titleForState:UIControlStateNormal] isEqualToString:@"Scan"]) {
         [self.bleRetriver scan];
-    } else if ([[self.ScanConnectBtn titleForState:UIControlStateNormal] isEqualToString:@"Connect"]) {
-        [self.bleRetriver connectWithUIID:[self.UIIDTextField text]];
     }
+//    else if ([[self.ScanConnectBtn titleForState:UIControlStateNormal] isEqualToString:@"Connect"]) {
+//        [self.bleRetriver connectWithUIID:[self.UIIDTextField text]];
+//    }
+}
+- (IBAction)connectPressed:(id)sender {
+    [self performSegueWithIdentifier:@"ObjCDistanceSegue" sender:nil];
 }
 
 -(void)retriveDeviceWithUIID:(NSNumber *)UIID {
@@ -69,14 +74,16 @@
     [self.bleRetriver stopScanning];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSUUID *uuid = [[NSUUID alloc]initWithUUIDString:[self.UIIDTextField text]];
+    ProximityObjCViewController *proximityVC = [segue destinationViewController];
+    [proximityVC setUUID:uuid];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

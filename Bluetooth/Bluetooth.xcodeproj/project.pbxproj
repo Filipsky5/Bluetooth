@@ -23,6 +23,13 @@
 		5F296DBF1BBAABE80084242D /* BluetoothTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F296DBE1BBAABE80084242D /* BluetoothTests.swift */; };
 		5F296DCA1BBAABE80084242D /* BluetoothUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F296DC91BBAABE80084242D /* BluetoothUITests.swift */; };
 		5F296DD81BBAABF90084242D /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F296DD71BBAABF90084242D /* CoreBluetooth.framework */; };
+		5F3D9DF61C54FE88005C8162 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9DF51C54FE88005C8162 /* Constans.swift */; };
+		5F3D9DF91C550C0A005C8162 /* BeaconLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9DF81C550C0A005C8162 /* BeaconLocator.m */; };
+		5F3D9DFC1C550F64005C8162 /* BeaconObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9DFB1C550F64005C8162 /* BeaconObjC.m */; };
+		5F3D9DFF1C551A14005C8162 /* ProximityObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9DFE1C551A14005C8162 /* ProximityObjCViewController.m */; };
+		5F3D9E011C553AD9005C8162 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3D9E001C553AD9005C8162 /* CoreLocation.framework */; };
+		5F3D9E041C555A26005C8162 /* ConstansObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E031C555A26005C8162 /* ConstansObjC.m */; };
+		5F3D9E061C5576AB005C8162 /* SwiftBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E051C5576AB005C8162 /* SwiftBeaconViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,17 @@
 		5F296DC91BBAABE80084242D /* BluetoothUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothUITests.swift; sourceTree = "<group>"; };
 		5F296DCB1BBAABE80084242D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F296DD71BBAABF90084242D /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		5F3D9DF51C54FE88005C8162 /* Constans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constans.swift; path = Constans/Constans.swift; sourceTree = "<group>"; };
+		5F3D9DF71C550C0A005C8162 /* BeaconLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconLocator.h; path = "OBJ C/BeaconLocator.h"; sourceTree = "<group>"; };
+		5F3D9DF81C550C0A005C8162 /* BeaconLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconLocator.m; path = "OBJ C/BeaconLocator.m"; sourceTree = "<group>"; };
+		5F3D9DFA1C550F64005C8162 /* BeaconObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconObjC.h; path = "OBJ C/BeaconObjC.h"; sourceTree = "<group>"; };
+		5F3D9DFB1C550F64005C8162 /* BeaconObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconObjC.m; path = "OBJ C/BeaconObjC.m"; sourceTree = "<group>"; };
+		5F3D9DFD1C551A14005C8162 /* ProximityObjCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProximityObjCViewController.h; path = "OBJ C/ProximityObjCViewController.h"; sourceTree = "<group>"; };
+		5F3D9DFE1C551A14005C8162 /* ProximityObjCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProximityObjCViewController.m; path = "OBJ C/ProximityObjCViewController.m"; sourceTree = "<group>"; };
+		5F3D9E001C553AD9005C8162 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5F3D9E021C555A26005C8162 /* ConstansObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConstansObjC.h; path = "OBJ C/ConstansObjC.h"; sourceTree = "<group>"; };
+		5F3D9E031C555A26005C8162 /* ConstansObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConstansObjC.m; path = "OBJ C/ConstansObjC.m"; sourceTree = "<group>"; };
+		5F3D9E051C5576AB005C8162 /* SwiftBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftBeaconViewController.swift; path = SWIFT/SwiftBeaconViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3D9E011C553AD9005C8162 /* CoreLocation.framework in Frameworks */,
 				5F123BED1BC19B3000251431 /* UIKit.framework in Frameworks */,
 				5F123BEB1BC19B2500251431 /* Foundation.framework in Frameworks */,
 				5F123BE91BC19B1D00251431 /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +121,7 @@
 		5F123BEE1BC19B6800251431 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F3D9E001C553AD9005C8162 /* CoreLocation.framework */,
 				5F123BEC1BC19B3000251431 /* UIKit.framework */,
 				5F123BEA1BC19B2500251431 /* Foundation.framework */,
 				5F123BE81BC19B1D00251431 /* CoreGraphics.framework */,
@@ -113,6 +133,7 @@
 		5F278FDB1C482F3C00646BC4 /* SWIFT */ = {
 			isa = PBXGroup;
 			children = (
+				5F3D9E051C5576AB005C8162 /* SwiftBeaconViewController.swift */,
 			);
 			name = SWIFT;
 			sourceTree = "<group>";
@@ -125,6 +146,14 @@
 				5F278FDD1C482F9100646BC4 /* Bluetooth-Bridging-Header.h */,
 				5F278FE11C48406000646BC4 /* BLERetriver.h */,
 				5F278FE21C48406000646BC4 /* BLERetriver.m */,
+				5F3D9DF71C550C0A005C8162 /* BeaconLocator.h */,
+				5F3D9DF81C550C0A005C8162 /* BeaconLocator.m */,
+				5F3D9DFA1C550F64005C8162 /* BeaconObjC.h */,
+				5F3D9DFB1C550F64005C8162 /* BeaconObjC.m */,
+				5F3D9DFD1C551A14005C8162 /* ProximityObjCViewController.h */,
+				5F3D9DFE1C551A14005C8162 /* ProximityObjCViewController.m */,
+				5F3D9E021C555A26005C8162 /* ConstansObjC.h */,
+				5F3D9E031C555A26005C8162 /* ConstansObjC.m */,
 			);
 			name = "OBJ C";
 			sourceTree = "<group>";
@@ -153,6 +182,7 @@
 		5F296DA31BBAABE80084242D /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				5F3D9DF41C54FC0C005C8162 /* Constans */,
 				5F278FDC1C482F4300646BC4 /* OBJ C */,
 				5F278FDB1C482F3C00646BC4 /* SWIFT */,
 				5F296DA41BBAABE80084242D /* AppDelegate.swift */,
@@ -184,6 +214,14 @@
 				5F296DCB1BBAABE80084242D /* Info.plist */,
 			);
 			path = BluetoothUITests;
+			sourceTree = "<group>";
+		};
+		5F3D9DF41C54FC0C005C8162 /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				5F3D9DF51C54FE88005C8162 /* Constans.swift */,
+			);
+			name = Constans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +292,11 @@
 				TargetAttributes = {
 					5F296DA01BBAABE80084242D = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5F296DB91BBAABE80084242D = {
 						CreatedOnToolsVersion = 7.0;
@@ -319,9 +362,15 @@
 			files = (
 				5F123BF41BC1A1C500251431 /* MasterViewController.swift in Sources */,
 				5F296DA81BBAABE80084242D /* Bluetooth.xcdatamodeld in Sources */,
+				5F3D9DF91C550C0A005C8162 /* BeaconLocator.m in Sources */,
+				5F3D9DFF1C551A14005C8162 /* ProximityObjCViewController.m in Sources */,
+				5F3D9E041C555A26005C8162 /* ConstansObjC.m in Sources */,
+				5F3D9DF61C54FE88005C8162 /* Constans.swift in Sources */,
+				5F3D9E061C5576AB005C8162 /* SwiftBeaconViewController.swift in Sources */,
 				5F278FE01C482F9200646BC4 /* ObjCBeaconViewController.m in Sources */,
 				5F278FE31C48406000646BC4 /* BLERetriver.m in Sources */,
 				5F278FDA1C482DC900646BC4 /* ChooseImplementationTableViewController.swift in Sources */,
+				5F3D9DFC1C550F64005C8162 /* BeaconObjC.m in Sources */,
 				5F296DA51BBAABE80084242D /* AppDelegate.swift in Sources */,
 				5F123BF01BC19C7100251431 /* Defines.swift in Sources */,
 			);

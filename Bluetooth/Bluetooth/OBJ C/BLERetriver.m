@@ -19,6 +19,12 @@
     return self;
 }
 
+-(void)setDelegate:(id<BLERetriverDelegate>)delegate{
+    _delegate = delegate;
+    [_delegate retriveDeviceWithUIID:@MYBEACONUUID];
+    [self.peripherals setObject:@MYBEACONUUID forKey:@MYBEACONUUID];
+}
+
 -(void)scan {
     [self.manager scanForPeripheralsWithServices:nil options:nil];
 }
@@ -28,8 +34,10 @@
 }
 
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI {
-    [_delegate retriveDeviceWithUIID:[peripheral name]];
-    [self.peripherals setObject:peripheral forKey:[peripheral name]];
+    if([self.peripherals objectForKey:[[peripheral identifier]UUIDString]] == nil) {
+        [_delegate retriveDeviceWithUIID:[[peripheral identifier] UUIDString]];
+        [self.peripherals setObject:peripheral forKey:[[peripheral identifier] UUIDString]];
+    }
 }
 
 -(void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
@@ -53,17 +61,19 @@
 }
 
 -(void)connectWithUIID:(NSString *)UIID {
-    [self.manager connectPeripheral:[self.peripherals objectForKey:UIID] options:nil];
-    [(CBPeripheral*) [self.peripherals objectForKey:UIID] setDelegate:self];
-    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
-    NSTimer *timer = [[NSTimer alloc] initWithFireDate:fireDate
-                                              interval:0.5
-                                                target:self
-                                              selector:@selector(readRSSIForPeripheral:)
-                                              userInfo:[self.peripherals objectForKey:UIID]
-                                               repeats:YES];
-    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-    [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+    if (![UIID  isEqual: @MYBEACONUUID]) {
+        [self.manager connectPeripheral:[self.peripherals objectForKey:UIID] options:nil];
+        [(CBPeripheral*) [self.peripherals objectForKey:UIID] setDelegate:self];
+        NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
+        NSTimer *timer = [[NSTimer alloc] initWithFireDate:fireDate
+                                                  interval:0.5
+                                                    target:self
+                                                  selector:@selector(readRSSIForPeripheral:)
+                                                  userInfo:[self.peripherals objectForKey:UIID]
+                                                   repeats:YES];
+        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+        [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+    }
 }
 
 -(void) readRSSIForPeripheral:(NSTimer*)theTime {

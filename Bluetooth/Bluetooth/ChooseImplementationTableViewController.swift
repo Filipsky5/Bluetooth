@@ -45,7 +45,7 @@ class ChooseImplementationTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case  0 :
-           
+            [self .performSegueWithIdentifier("SwiftSegue", sender: self)]
             break
         case  1 :
              [self .performSegueWithIdentifier("ObjectiveCSegue", sender: self)]

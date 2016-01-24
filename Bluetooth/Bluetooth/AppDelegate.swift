@@ -8,15 +8,20 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
+    var locationManager = CLLocationManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        locationManager.delegate = self
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Sound,.Alert], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         return true
     }
 
@@ -113,5 +118,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
     }
 
+}
+
+// MARK: - CLLocationManagerDelegate
+extension AppDelegate: CLLocationManagerDelegate {
+    
+    
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if let _ = region as? CLBeaconRegion {
+            let notification = UILocalNotification()
+            notification.alertBody = "Zgubiłeś Beacona"
+            notification.soundName = "Default"
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
+    }
 }
 
