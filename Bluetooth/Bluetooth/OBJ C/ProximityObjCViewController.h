@@ -10,6 +10,7 @@
 
 @interface ProximityObjCViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *proximityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) NSUUID *UUID;
 
 @end

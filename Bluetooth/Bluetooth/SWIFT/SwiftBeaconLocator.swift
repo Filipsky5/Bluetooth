@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 protocol SwiftBeaconLocatorDelegate {
-    func didReceiveBeaconInRange(range: CLProximity);
+    func didReceiveBeaconInRange(range: CLProximity, withAccuracy accuracy:CLLocationAccuracy);
 }
 
 class SwiftBeaconLocator: NSObject,CLLocationManagerDelegate {
@@ -58,7 +58,7 @@ class SwiftBeaconLocator: NSObject,CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         for _beacon in beacons {
             if(beacon!.isEqualToBeacon(_beacon)){
-                delegate.didReceiveBeaconInRange(_beacon.proximity)
+                delegate.didReceiveBeaconInRange(_beacon.proximity, withAccuracy: _beacon.accuracy)
             }
         }
     }

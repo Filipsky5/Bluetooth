@@ -40,7 +40,9 @@
     }
 }
 
--(void)didReceiveBeaconInRenage:(CLProximity)range {
+-(void)didReceiveBeaconInRenage:(CLProximity)range withDistance:(CLLocationAccuracy)accuracy{
+    [self.distanceLabel setText:[NSString stringWithFormat:@"%f",accuracy]];
+
     [self.proximityLabel setText:[self nameForProximity:range]];
 }
 

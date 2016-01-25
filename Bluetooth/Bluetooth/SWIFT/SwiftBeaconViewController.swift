@@ -19,11 +19,6 @@ class SwiftBeaconViewController: UIViewController, UITableViewDataSource,UITable
     var devices:Array<String>
     var bleRetriver:SwiftBLERetriver?
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        devices = Array<String>()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        bleRetriver = SwiftBLERetriver(delegate: self);
-    }
 
     required init?(coder aDecoder: NSCoder) {
         devices = Array<String>()
@@ -32,6 +27,7 @@ class SwiftBeaconViewController: UIViewController, UITableViewDataSource,UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bleRetriver = SwiftBLERetriver(delegate: self);
         scanButton.setTitle("Scan", forState: .Normal)
         beaconsTableView.reloadData()
         

@@ -12,7 +12,7 @@
 
 @protocol BeaconLocatorDelegate <NSObject>
 
--(void)didReceiveBeaconInRenage:(CLProximity)range;
+-(void)didReceiveBeaconInRenage:(CLProximity)range withDistance:(CLLocationAccuracy)accuracy;
 
 @end
 

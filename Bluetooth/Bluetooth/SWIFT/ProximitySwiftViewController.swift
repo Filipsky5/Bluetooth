@@ -11,16 +11,13 @@ import CoreLocation
 
 class ProximitySwiftViewController: UIViewController, SwiftBeaconLocatorDelegate {
     @IBOutlet weak var rangeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     var UUID:NSUUID?
     var locator:SwiftBeaconLocator?
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        locator = SwiftBeaconLocator(delegate: self)
-    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        locator = SwiftBeaconLocator(delegate: self)
     }
 
     override func viewDidLoad() {
@@ -43,11 +40,12 @@ class ProximitySwiftViewController: UIViewController, SwiftBeaconLocatorDelegate
     
     func startGettingProximityData (){
         if let _ = UUID {
-            locator!.stopMonitoringItemWithUUID(UUID!, andIdentifier: UUID!.UUIDString)
+            locator!.startMonitoringItemWithUUID(UUID!, andIdentifier: UUID!.UUIDString)
         }
     }
    
-    func didReceiveBeaconInRange(range: CLProximity) {
+    func didReceiveBeaconInRange(range: CLProximity, withAccuracy accuracy:CLLocationAccuracy){
+        distanceLabel.text = "\(accuracy)"
         rangeLabel.text = nameForProximity(range)
     }
     

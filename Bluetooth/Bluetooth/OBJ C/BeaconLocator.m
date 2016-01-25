@@ -67,7 +67,7 @@
 {
     for (CLBeacon *beacon in beacons) {
         if([self.item isEqualToBeacon:beacon]){
-            [self.delegate didReceiveBeaconInRenage:[beacon proximity]];
+            [self.delegate didReceiveBeaconInRenage:[beacon proximity] withDistance:[beacon accuracy]];
         }
     }
     

@@ -13,7 +13,7 @@ protocol SwiftBLERetriverDelegate {
 }
 
 class SwiftBLERetriver: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
-    var manager:CBCentralManager
+    var manager:CBCentralManager?
     var delegate:SwiftBLERetriverDelegate
     var peripheralsUUID:Array<String>
     var peripherals:Dictionary<String,CBPeripheral>
@@ -24,14 +24,13 @@ class SwiftBLERetriver: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
         peripheralsUUID.append(MYBEACONUUID)
         self.delegate = delegate
         delegate.retriveDeviceWithUIID(MYBEACONUUID)
-        manager = CBCentralManager()
         super.init()
-        manager = CBCentralManager(delegate: self, queue: nil)
+        manager = CBCentralManager(delegate: self, queue: nil, options: nil)
         
     }
     
     func scan() {
-        manager.scanForPeripheralsWithServices(nil, options: nil)
+        manager!.scanForPeripheralsWithServices(nil, options: nil)
     }
     
     func centralManagerDidUpdateState(central: CBCentralManager) {
@@ -39,7 +38,7 @@ class SwiftBLERetriver: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
     }
     
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        if let _ = peripherals[peripheral.identifier.UUIDString] {
+        if peripherals[peripheral.identifier.UUIDString] == nil {
             delegate.retriveDeviceWithUIID(peripheral.identifier.UUIDString)
             peripherals.updateValue(peripheral, forKey: peripheral.identifier.UUIDString)
             peripheralsUUID.append(peripheral.identifier.UUIDString)
@@ -63,12 +62,12 @@ class SwiftBLERetriver: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
     }
     
     func stopScanning() {
-        self.manager.stopScan()
+        self.manager!.stopScan()
     }
     
     func connectWithUIID(_UIID:String) {
         if(_UIID != MYBEACONUUID) {
-            manager.connectPeripheral(peripherals[_UIID]!, options: nil)
+            manager!.connectPeripheral(peripherals[_UIID]!, options: nil)
             peripherals[_UIID]!.delegate = self
             let fireDate:NSDate = NSDate(timeIntervalSinceNow: 1.0)
             let timer:NSTimer = NSTimer.init(fireDate: fireDate, interval: 0.5, target: self, selector: "readRSSIForPeripheral:", userInfo: peripherals[_UIID], repeats: true)
