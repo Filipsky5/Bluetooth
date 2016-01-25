@@ -173,10 +173,43 @@
             </objects>
             <point key="canvasLocation" x="1433" y="-1912"/>
         </scene>
-        <!--View Controller-->
+        <!--Proximity Swift View Controller-->
+        <scene sceneID="HGD-u9-Axs">
+            <objects>
+                <viewController id="JcW-ON-WFl" customClass="ProximitySwiftViewController" customModule="Bluetooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JM6-OJ-UfE"/>
+                        <viewControllerLayoutGuide type="bottom" id="rfr-lN-Kd6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="meq-yy-G0A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LR-Kp-9Na">
+                                <rect key="frame" x="279" y="70" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4LR-Kp-9Na" firstAttribute="centerX" secondItem="meq-yy-G0A" secondAttribute="centerX" id="8T0-RJ-HZf"/>
+                            <constraint firstItem="4LR-Kp-9Na" firstAttribute="top" secondItem="JM6-OJ-UfE" secondAttribute="bottom" constant="50" id="cxH-du-T0g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rangeLabel" destination="4LR-Kp-9Na" id="iB5-91-CtU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQb-jv-hbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1433" y="-1109"/>
+        </scene>
+        <!--Swift Beacon View Controller-->
         <scene sceneID="cdk-Vb-8lv">
             <objects>
-                <viewController id="af8-Ld-gCA" sceneMemberID="viewController">
+                <viewController id="af8-Ld-gCA" customClass="SwiftBeaconViewController" customModule="Bluetooth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dpG-Kl-PYc"/>
                         <viewControllerLayoutGuide type="bottom" id="b4z-7E-Gbx"/>
@@ -186,13 +219,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXx-rD-zn4">
-                                <rect key="frame" x="284" y="20" width="33" height="21"/>
+                                <rect key="frame" x="284" y="64" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur8-mb-OVZ">
-                                <rect key="frame" x="277" y="116" width="46" height="30"/>
+                                <rect key="frame" x="277" y="160" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="2fW-rM-DKp"/>
                                     <constraint firstAttribute="height" constant="30" id="zoB-9i-WHv"/>
@@ -206,10 +239,12 @@
                                 </variation>
                                 <connections>
                                     <action selector="ScanConnectPressed:" destination="8PY-gp-zzD" eventType="touchUpInside" id="Wrq-4M-jod"/>
+                                    <action selector="ScanPressed:" destination="af8-Ld-gCA" eventType="touchUpInside" id="E8G-1Q-8QW"/>
+                                    <action selector="stopScanning:" destination="af8-Ld-gCA" eventType="touchUpInside" id="7bF-ei-aIi"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N7T-ST-DCy">
-                                <rect key="frame" x="20" y="166" width="560" height="434"/>
+                                <rect key="frame" x="20" y="210" width="560" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceCell" id="zhj-HI-m31">
@@ -227,21 +262,22 @@
                                 </connections>
                             </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKy-4z-P3V">
-                                <rect key="frame" x="470" y="116" width="100" height="30"/>
+                                <rect key="frame" x="470" y="160" width="100" height="30"/>
                                 <state key="normal" title="Stop Scanning"/>
                                 <connections>
                                     <action selector="stopScanningPressed:" destination="8PY-gp-zzD" eventType="touchUpInside" id="Us0-je-mg3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbH-hj-hyz">
-                                <rect key="frame" x="30" y="56" width="540" height="30"/>
+                                <rect key="frame" x="30" y="100" width="540" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiP-7N-lua">
-                                <rect key="frame" x="30" y="116" width="59" height="30"/>
+                                <rect key="frame" x="30" y="160" width="59" height="30"/>
                                 <state key="normal" title="Connect"/>
                                 <connections>
+                                    <action selector="connectPressed:" destination="af8-Ld-gCA" eventType="touchUpInside" id="mMs-6W-nzC"/>
                                     <action selector="connectPressed:" destination="8PY-gp-zzD" eventType="touchUpInside" id="tBC-Lg-kGZ"/>
                                 </connections>
                             </button>
@@ -249,6 +285,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FKy-4z-P3V" firstAttribute="top" secondItem="gbH-hj-hyz" secondAttribute="bottom" constant="30" id="2yo-hB-w34"/>
+                            <constraint firstItem="rXx-rD-zn4" firstAttribute="top" secondItem="dpG-Kl-PYc" secondAttribute="bottom" id="6li-16-S7f"/>
                             <constraint firstItem="N7T-ST-DCy" firstAttribute="trailing" secondItem="Gm5-My-rtV" secondAttribute="trailingMargin" id="Gme-zo-KJh"/>
                             <constraint firstItem="HiP-7N-lua" firstAttribute="leading" secondItem="Gm5-My-rtV" secondAttribute="leadingMargin" constant="10" id="Ljx-tv-EMz"/>
                             <constraint firstItem="gbH-hj-hyz" firstAttribute="centerX" secondItem="Gm5-My-rtV" secondAttribute="centerX" id="P27-PR-XT3"/>
@@ -268,9 +305,18 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="P27-PR-XT3"/>
+                                <exclude reference="oUx-AU-07l"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="beaconsTableView" destination="N7T-ST-DCy" id="WWF-O4-oqH"/>
+                        <outlet property="connectButton" destination="HiP-7N-lua" id="53w-gg-EXX"/>
+                        <outlet property="scanButton" destination="Ur8-mb-OVZ" id="Rcm-le-KtA"/>
+                        <outlet property="stopButton" destination="FKy-4z-P3V" id="Ysf-z7-sbl"/>
+                        <outlet property="uiidTextField" destination="gbH-hj-hyz" id="mHT-ej-yl5"/>
+                        <segue destination="JcW-ON-WFl" kind="show" identifier="SwiftDistanceSegue" id="0aU-l9-2RA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoj-il-4lQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,6 +30,10 @@
 		5F3D9E011C553AD9005C8162 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3D9E001C553AD9005C8162 /* CoreLocation.framework */; };
 		5F3D9E041C555A26005C8162 /* ConstansObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E031C555A26005C8162 /* ConstansObjC.m */; };
 		5F3D9E061C5576AB005C8162 /* SwiftBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E051C5576AB005C8162 /* SwiftBeaconViewController.swift */; };
+		5F3D9E081C5578D4005C8162 /* SwiftBLERetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E071C5578D4005C8162 /* SwiftBLERetriver.swift */; };
+		5F3D9E0A1C557973005C8162 /* SwiftBeaconLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E091C557973005C8162 /* SwiftBeaconLocator.swift */; };
+		5F3D9E0C1C557F1B005C8162 /* BeaconSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0B1C557F1B005C8162 /* BeaconSwift.swift */; };
+		5F3D9E0E1C5596DC005C8162 /* ProximitySwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D9E0D1C5596DC005C8162 /* ProximitySwiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,10 @@
 		5F3D9E021C555A26005C8162 /* ConstansObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConstansObjC.h; path = "OBJ C/ConstansObjC.h"; sourceTree = "<group>"; };
 		5F3D9E031C555A26005C8162 /* ConstansObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConstansObjC.m; path = "OBJ C/ConstansObjC.m"; sourceTree = "<group>"; };
 		5F3D9E051C5576AB005C8162 /* SwiftBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftBeaconViewController.swift; path = SWIFT/SwiftBeaconViewController.swift; sourceTree = "<group>"; };
+		5F3D9E071C5578D4005C8162 /* SwiftBLERetriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftBLERetriver.swift; path = SWIFT/SwiftBLERetriver.swift; sourceTree = "<group>"; };
+		5F3D9E091C557973005C8162 /* SwiftBeaconLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftBeaconLocator.swift; path = SWIFT/SwiftBeaconLocator.swift; sourceTree = "<group>"; };
+		5F3D9E0B1C557F1B005C8162 /* BeaconSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconSwift.swift; path = SWIFT/BeaconSwift.swift; sourceTree = "<group>"; };
+		5F3D9E0D1C5596DC005C8162 /* ProximitySwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProximitySwiftViewController.swift; path = SWIFT/ProximitySwiftViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				5F3D9E051C5576AB005C8162 /* SwiftBeaconViewController.swift */,
+				5F3D9E071C5578D4005C8162 /* SwiftBLERetriver.swift */,
+				5F3D9E091C557973005C8162 /* SwiftBeaconLocator.swift */,
+				5F3D9E0B1C557F1B005C8162 /* BeaconSwift.swift */,
+				5F3D9E0D1C5596DC005C8162 /* ProximitySwiftViewController.swift */,
 			);
 			name = SWIFT;
 			sourceTree = "<group>";
@@ -361,13 +373,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F123BF41BC1A1C500251431 /* MasterViewController.swift in Sources */,
+				5F3D9E0C1C557F1B005C8162 /* BeaconSwift.swift in Sources */,
 				5F296DA81BBAABE80084242D /* Bluetooth.xcdatamodeld in Sources */,
+				5F3D9E081C5578D4005C8162 /* SwiftBLERetriver.swift in Sources */,
 				5F3D9DF91C550C0A005C8162 /* BeaconLocator.m in Sources */,
+				5F3D9E0E1C5596DC005C8162 /* ProximitySwiftViewController.swift in Sources */,
 				5F3D9DFF1C551A14005C8162 /* ProximityObjCViewController.m in Sources */,
 				5F3D9E041C555A26005C8162 /* ConstansObjC.m in Sources */,
 				5F3D9DF61C54FE88005C8162 /* Constans.swift in Sources */,
 				5F3D9E061C5576AB005C8162 /* SwiftBeaconViewController.swift in Sources */,
 				5F278FE01C482F9200646BC4 /* ObjCBeaconViewController.m in Sources */,
+				5F3D9E0A1C557973005C8162 /* SwiftBeaconLocator.swift in Sources */,
 				5F278FE31C48406000646BC4 /* BLERetriver.m in Sources */,
 				5F278FDA1C482DC900646BC4 /* ChooseImplementationTableViewController.swift in Sources */,
 				5F3D9DFC1C550F64005C8162 /* BeaconObjC.m in Sources */,
